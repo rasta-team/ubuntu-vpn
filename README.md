@@ -7,3 +7,14 @@ Autoscript for VPN installation on Ubuntu
 <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"/>
 <img src="https://img.shields.io/badge/Ubuntu-20.04 LTS-informational?style=for-the-badge&labelColor=E95420&logo=ubuntu&logoColor=white"/>
 </p>
+
+## Installation
+1. Download autoscript
+```bash
+wget -O /usr/bin/autoscript "https://raw.githubusercontent.com/skynetcenter/ubuntu-vpn/main/autoscript.sh"
+```
+
+2. Execute and run autoscript
+```bash
+chmod +x /usr/bin/autoscript && autoscript
+```
