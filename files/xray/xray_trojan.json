@@ -1,0 +1,40 @@
+{
+  "log": {
+    "access": "/var/log/xray/access-trojan.log",
+    "access": "/var/log/xray/error-trojan.log",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "port": 443,
+      "protocol": "trojan",
+      "settings": {
+        "client": []
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "tls",
+        "tlsSettings": {
+          "alpn": [
+            "http/1.1"
+          ],
+          "certificates": [
+            {
+              "certificateFile": "/metavpn/xray/xray.crt",
+              "keyFile": "/metavpn/xray/xray.key"
+            },
+            {
+              "certificateFile": "/usr/local/etc/xray/self_signed_cert.pem",
+              "keyFile": "/usr/local/etc/xray/self_signed_key.pem"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom"
+    }
+  ]
+}
